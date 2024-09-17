@@ -9,7 +9,7 @@ export interface ThemeConfig {
   name: string
   welcomeText: "ciallo!"
   motto: string[]
-  social: { icon: bilibili; url: "https://space.bilibili.com/23527984?spm_id_from=333.1007.0.0" }[]
+ social: { icon: string; url: string }[]
 
   //footer
   footerName: string
@@ -80,8 +80,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     welcomeText: 'Hello, VitePress',
     motto: ['和你的日常，就是奇迹', '何気ない日常で、ほんの少しの奇跡を見つける物語。'],
     social: [
-      { icon: 'github', url: 'https://github.com/' },
-      { icon: 'bilibili', url: 'https://www.bilibili.com/' },
+      { icon: 'github', url: 'https://github.com/Ilosyi' },
+      { icon: 'bilibili', url: 'https://space.bilibili.com/23527984?spm_id_from=333.788.0.0' },
       { icon: 'qq', url: 'https://im.qq.com/index/' },
       { icon: 'wechat', url: 'https://weixin.qq.com/' },
     ],
@@ -96,9 +96,9 @@ export default defineConfigWithTheme<ThemeConfig>({
     //gitalk配置
     clientID: 'Ov23lia9U9wFN3WMyoKK',
     clientSecret: 'b2418ab598c188c43a247c99e728dd2735d58c3b',
-    repo: 'vitepress-theme-bluearchive',
-    owner: 'Alittfre',
-    admin: ['Alittfre'],
+    repo: 'bluearchive-blog',
+    owner: 'losyi',
+    admin: ['losyi'],
   },
   markdown: {
     theme: 'github-light',
