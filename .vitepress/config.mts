@@ -7,9 +7,9 @@ export interface ThemeConfig {
   //banner
   videoBanner: boolean
   name: string
-  welcomeText: string
+  welcomeText: "ciallo!"
   motto: string[]
-  social: { icon: string; url: string }[]
+  social: { icon: bilibili; url: "https://space.bilibili.com/23527984?spm_id_from=333.1007.0.0" }[]
 
   //footer
   footerName: string
@@ -65,8 +65,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   // sitemap: {
   //   hostname: 'https://vitepress-theme-bluearchive.vercel.app',
   // },
-  title: "Sensei's 部落格",
-  description: "Sensei's 部落格",
+  title: "Sensei's losyi",
+  description: "Sensei's losyi",
   themeConfig: {
     // navBar
     menuList: [
