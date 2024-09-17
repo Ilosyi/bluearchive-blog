@@ -1,6 +1,6 @@
 ---
 title: 中文測試
-date: 2013-12-24
+date: 2023-12-24
 tags: [Chinese, test]
 head:
   - - meta
