@@ -230,7 +230,7 @@ cnf文件的格式示例请见上文
 ```c++
   ifstream file(filename);
         std::string line;
-``
+
 		if (!file.is_open())//打开文件失败
         {
 			cerr << "打开文件: " << filename <<"失败"<< endl;//输出错误信息
