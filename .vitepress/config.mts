@@ -24,40 +24,45 @@ export interface ThemeConfig {
   repo: string
   owner: string
   admin: string[]
+
+  sidebar: {
+    homeLink: { name: string; url: string }, // Link to homepage
+    showTableOfContents: boolean, // Option to show the table of contents
+  }
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
   lang: 'zh-CN',
   head: [
-    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
+    ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],// 网站图标
     // gitalk
-    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/gitalk/dist/gitalk.css' }],
-    ['script', { src: 'https://unpkg.com/gitalk/dist/gitalk.min.js' }],
+    ['link', { rel: 'stylesheet', href: 'https://unpkg.com/gitalk/dist/gitalk.css' }],// gitalk样式
+    ['script', { src: 'https://unpkg.com/gitalk/dist/gitalk.min.js' }],// gitalk脚本
     // bluearchive font
     [
       'link',
       {
-        rel: 'stylesheet',
-        href: '/font/Blueaka/Blueaka.css',
+        rel: 'stylesheet',// 引入字体
+        href: '/font/Blueaka/Blueaka.css',// 字体路径
       },
     ],
     [
       'link',
       {
-        rel: 'stylesheet',
-        href: '/font/Blueaka_Bold/Blueaka_Bold.css',
+        rel: 'stylesheet',// 引入字体
+        href: '/font/Blueaka_Bold/Blueaka_Bold.css',// 字体路径
       },
     ],
     // 图片灯箱
     [
       'link',
       {
-        rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css',
+        rel: 'stylesheet',// 引入图片灯箱样式
+        href: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css',// 图片灯箱样式路径
       },
     ],
     [
-      'script',
+      'script',// 引入图片灯箱脚本
       {
         src: 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js',
       },
@@ -68,19 +73,20 @@ export default defineConfigWithTheme<ThemeConfig>({
   // sitemap: {
   //   hostname: 'https://vitepress-theme-bluearchive.vercel.app',
   // },
-  title: "Sensei's losyi",
-  description: "Sensei's losyi",
+  title: "Sensei's losyi",// 网站标题
+  description: "Sensei's losyi",// 网站描述
+
   themeConfig: {
-    // navBar
+    //navBar配置
     menuList: [
       { name: '首页', url: '' },
       { name: '标签', url: 'tags/' },
     ],
 
-    //banner区配置
+    //横幅配置
     videoBanner: false,
     name: "Sensei's losyi",
-    welcomeText: 'Hello, VitePress',
+    welcomeText: 'Hello, Sensei',
     motto: ['和你的日常，就是奇迹', '何気ない日常で、ほんの少しの奇跡を見つける物語。'],
     social: [
       { icon: 'github', url: 'https://github.com/Ilosyi' },
@@ -89,7 +95,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       { icon: 'wechat', url: 'https://weixin.qq.com/' },
     ],
 
-    //footer配置
+    //页脚配置
     footerName: 'Sensei',
     poweredList: [
       { name: 'VitePress', url: 'https://github.com/vuejs/vitepress' },
@@ -102,13 +108,18 @@ export default defineConfigWithTheme<ThemeConfig>({
     repo: 'bluearchive-blog',
     owner: 'losyi',
     admin: ['losyi'],
+    
+    sidebar: {
+    homeLink: { name: '返回主页', url: '/' }, // Set link to homepage
+    showTableOfContents: true, // Enable table of contents
+  }
   },
   markdown: {
     theme: 'github-light',
     lineNumbers: true,
     math: true,
     config: (md) => {
-      // use more markdown-it plugins!
+      // 添加自定义属性
       md.use(mdItCustomAttrs, 'image', {
         'data-fancybox': 'gallery',
       });
@@ -116,7 +127,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         permalink: true,
         permalinkBefore: true,
         permalinkSymbol: '#',
-        level: [1, 2, 3],
+        level: [1, 2, 3,4],
       })
     },
   },
