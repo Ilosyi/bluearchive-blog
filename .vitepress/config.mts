@@ -25,10 +25,16 @@ export interface ThemeConfig {
   owner: string
   admin: string[]
 
-  sidebar: {
-    homeLink: { name: string; url: string }, // Link to homepage
-    showTableOfContents: boolean, // Option to show the table of contents
-  }
+  sidebar: [
+    {
+      text: string,
+      items: [
+        { text: string, link: string },
+        
+        //...
+      ]
+    }
+  ]
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -108,11 +114,17 @@ export default defineConfigWithTheme<ThemeConfig>({
     repo: 'bluearchive-blog',
     owner: 'losyi',
     admin: ['losyi'],
-    
-    sidebar: {
-    homeLink: { name: '返回主页', url: '/' }, // Set link to homepage
-    showTableOfContents: true, // Enable table of contents
-  }
+
+    sidebar: [
+      {
+        text: 'Guide',
+        items: [
+          { text: '首页', link: '/' },
+          
+          //...
+        ]
+      }
+    ]
   },
   markdown: {
     theme: 'github-light',
