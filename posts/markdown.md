@@ -1,7 +1,7 @@
 ---
 title: Markdown Style test
 date: 2018-07-24
-tags: [Foo, Bar]
+tags: [测试]
 head:
   - - meta
     - name: description

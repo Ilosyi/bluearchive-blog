@@ -2,24 +2,7 @@
 title: Code Highlight Style test
 date: 2019-07-25
 tags:
-  [
-    rust,
-    json,
-    python,
-    html,
-    javascript,
-    cpp,
-    sql,
-    objectivec,
-    java,
-    swift,
-    css,
-    ruby,
-    makefile,
-    go,
-    bash,
-    ini,
-  ]
+  [测试]
 head:
   - - meta
     - name: description

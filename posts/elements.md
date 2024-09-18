@@ -1,7 +1,7 @@
 ---
 title: Elements
 date: 2013-12-24
-tags: [elements, test]
+tags: [测试]
 head:
   - - meta
     - name: description
