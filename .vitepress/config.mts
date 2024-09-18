@@ -8,7 +8,7 @@ export interface ThemeConfig {
   //banner
   videoBanner: boolean
   name: string
-  welcomeText: "ciallo!"
+  welcomeText: string
   motto: string[]
  social: { icon: string; url: string }[]
 
