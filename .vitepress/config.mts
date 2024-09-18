@@ -1,6 +1,6 @@
 import { defineConfigWithTheme } from 'vitepress'
 import mdItCustomAttrs from 'markdown-it-custom-attrs'
-import markdownItTocDoneRight from 'markdown-it-toc-done-right'
+
 export interface ThemeConfig {
   //navBar
   menuList: { name: string; url: string }[]
@@ -110,7 +110,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       md.use(mdItCustomAttrs, 'image', {
         'data-fancybox': 'gallery',
       })
-      md.use(markdownItTocDoneRight)
     },
   },
 })
