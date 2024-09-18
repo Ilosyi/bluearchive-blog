@@ -227,24 +227,7 @@ bool propagate(CNF& cnf, const Literal& literal,int *assignments)
 cnf文件的格式示例请见上文
 ### 2.3.1 打开文件
 这里用C++实现，同时，因为程序可能需要反复读入不同的cnf文件，这里对CNF进行清空操作
-```c++
-        ifstream file(filename);
-        std::string line;
 
-		if (!file.is_open())//打开文件失败
-        {
-			cerr << "打开文件: " << filename <<"失败"<< endl;//输出错误信息
-            return false;
-        }
-   //调试     else
-   //     {
-			//printf("File opened successfully\n");//打开文件成功
-   //     }
-        if (!cnf.isEmpty())//如果CNF不为空
-        {
-			cnf.clauses.clear();//清空CNF
-        }
-```
 ### 2.3.2 读取内容
 #### 2.3.2.1 getline函数
 ```
