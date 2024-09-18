@@ -170,14 +170,16 @@ public:
 	void print();
 };
 ```
+
 # 2 什么是DPLL算法？
 DPLL算法是基于树/二叉树的回溯搜索算法，主要使用两种基本处理策略：
+
 ## 2.1 单子句规则
 单子句规则。如果子句集S中有一个单子句L,那么L一定取真值，于是可以从S中删除所有包含L的子句（包括单子句本身），得到子句集S1，如果它是空集，则S可满足。否则对S1中的每个子句，如果它包含文字¬L(因为它为假）,则从该子句中去掉这个文字，这样可得到子句集合S2。S可满足当且仅当S2可满足。单子句传播策略就是反复利用单子句规则化简S的过程。
 <font color=Blue>**即去掉包含L的字句，并去掉剩下子句中的¬L文字**</font>
 故在DPLL函数中，可优先寻找单子句进行传播
 ```c++
- while (true) {
+while (true) {
         bool unitClauseFound = false;
         for (int i = 0; i < cnf.clauses.size(); ++i) {
             const Clause& clause = cnf.clauses[i];
@@ -193,13 +195,18 @@ DPLL算法是基于树/二叉树的回溯搜索算法，主要使用两种基本
                 break;
             }
         }
+}
 ```
+
 ## 2.2 分裂策略
+
 ### 2.2.1 分裂策略概念
+
 按**某种策略**选取一个文字L.如果L取真值，则根据单子句传播策略，可将S化成S2；若L取假值（即¬L成立）时，S可化成S1.
 交错使用上述两种策略可不断地对公式化简，并最终达到终止状态，其执行过程可表示为一棵二叉搜索树,如下图所示。
 ![](https://img2024.cnblogs.com/blog/3507821/202409/3507821-20240907114939000-758044065.png#pic_center =200x300)
 基于单子句传播与分裂策略的DPLL算法可以描述为一个如后所示的递归过程DPLL( S ), DPLL算法也可用非递归实现。
+
 ```c++
 DPLL( S) :
 /* S为公式对应的子句集。若其满足，返回TURE；否则返回FALSE. */
@@ -215,19 +222,41 @@ if DPLL（S ∪v ）return(TURE);  //在第一分支中搜索
 return DPLL(S ∪¬v);//回溯到对v执行分支策略的初态进入另一分支
 }
 ```
+
 ### 2.2.2 分裂（传播）函数
 这里的assignments是用来记录赋值状态(由于课程要求将可满足时的结果保存到.res文件中），后续会谈到
 ```c++
 bool propagate(CNF& cnf, const Literal& literal,int *assignments) 
 {
     //待更新
+}
 ```
 ## 2.3 读取cnf文件
 课设要求读取cnf算例文件，解析文件，基于一定的物理结构，建立公式的内部表示；并实现对解析正确性的验证功能，即遍历内部结构逐行输出与显示每个子句，与输入算例对比可人工判断解析功能的正确性。
 cnf文件的格式示例请见上文
 ### 2.3.1 打开文件
 这里用C++实现，同时，因为程序可能需要反复读入不同的cnf文件，这里对CNF进行清空操作
+```c++
+bool CNFParser()
+{
+        ifstream file(filename);
+        std::string line;
 
+		if (!file.is_open())//打开文件失败
+        {
+			cerr << "打开文件: " << filename <<"失败"<< endl;//输出错误信息
+            return false;
+        }
+   //调试     else
+   //     {
+			//printf("File opened successfully\n");//打开文件成功
+   //     }
+        if (!cnf.isEmpty())//如果CNF不为空
+        {
+			cnf.clauses.clear();//清空CNF
+        }
+}
+```
 ### 2.3.2 读取内容
 #### 2.3.2.1 getline函数
 ```
@@ -480,5 +509,5 @@ SAT公式CNF文件中，一般变元是从1进行连续编码的，可以将上�
 bool XSudokuToCnf(const vector<int>& board, int empty)
 {
 //待更新
-|
+}
 ```
