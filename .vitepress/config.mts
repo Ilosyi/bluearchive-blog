@@ -120,6 +120,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   md.use(mdItCustomAttrs, 'image', {
     'data-fancybox': 'gallery', // 给所有图片添加属性
   });
-};
+},
   },
 })
