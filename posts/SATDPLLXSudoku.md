@@ -228,7 +228,7 @@ cnf文件的格式示例请见上文
 ### 2.3.1 打开文件
 这里用C++实现，同时，因为程序可能需要反复读入不同的cnf文件，这里对CNF进行清空操作
 ```c++
-  ifstream file(filename);
+        ifstream file(filename);
         std::string line;
 
 		if (!file.is_open())//打开文件失败
