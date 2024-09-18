@@ -247,10 +247,7 @@ bool CNFParser()
 			cerr << "打开文件: " << filename <<"失败"<< endl;//输出错误信息
             return false;
         }
-   //调试     else
-   //     {
-			//printf("File opened successfully\n");//打开文件成功
-   //     }
+
         if (!cnf.isEmpty())//如果CNF不为空
         {
 			cnf.clauses.clear();//清空CNF
