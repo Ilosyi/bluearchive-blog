@@ -107,11 +107,19 @@ export default defineConfigWithTheme<ThemeConfig>({
     theme: 'github-light',
     lineNumbers: true,
     math: true,
-    config: (md) => {
-      // use more markdown-it plugins!
-      md.use(mdItCustomAttrs, 'image', {
-        'data-fancybox': 'gallery',
-      })
-    },
+  const config = (md) => {
+  // 使用 markdown-it-anchor 插件为标题自动生成锚点
+  md.use(anchorPlugin, {
+    permalink: true, // 添加锚点链接
+    permalinkBefore: true, // 在标题前添加锚点链接
+    permalinkSymbol: '#', // 锚点符号（可以自定义为其他符号）
+    level: [1, 2, 3], // 设置要生成锚点的标题层级
+  });
+
+  // 使用 markdown-it-custom-attrs 插件给图片添加属性
+  md.use(mdItCustomAttrs, 'image', {
+    'data-fancybox': 'gallery', // 给所有图片添加属性
+  });
+};
   },
 })
