@@ -1,7 +1,7 @@
 ---
 title: 2024秋华中科技大学数据结构课设:基于SAT(DPLL算法)的对角线数独游戏求解程序
 date: 2023-12-24
-tags: [大一, 英语]
+tags: [大二,课设]
 head:
   - - meta
     - name: description
